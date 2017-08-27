@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 
 import io.zbus.examples.rpc.biz.User;
 import io.zbus.mq.Broker;
+import io.zbus.mq.ConsumeGroup;
 import io.zbus.mq.MessageHandler;
 import io.zbus.mq.Consumer;
 import io.zbus.mq.ConsumerConfig;
@@ -25,17 +26,29 @@ public class ConsumerExample {
 		//Broker broker = new Broker("localhost:15555;localhost:15556"); //Why not test HA?
 		
 		ConsumerConfig config = new ConsumerConfig(broker);
-		config.setTopic("jwBroad");              // [R] Topic to consume
-		config.setConsumeGroup("jwBroad3"); // [O] ConsumeGroup, by default null, consumes the group name = topic
+		config.setTopic("bbbo");              // [R] Topic to consume
+		
+		ConsumeGroup group = new ConsumeGroup();
+		final String project="*.account";
+		final String project1="bbbo";
+		group.setGroupName(project1);
+		
+		group.setFilter(project); 
+		config.setConsumeGroup(group); 
+	//	config.setConsumeGroup("jwBroad3"); // [O] ConsumeGroup, by default null, consumes the group name = topic
 		config.setMessageHandler(new MessageHandler() { //Message handler, biz logic goes here
 			
 			public void handle(Message msg, MqClient client) throws IOException {
 				// MqClient is the physical connection to MqServer, may be connected to different MqServer
 				// if multiple MqServer avaialbe, with MqClient, the consumer handler may reply back, such as RPC case
+				
+				
 				System.out.println(msg.getBodyString());
 				System.out.println(msg.getJwBusinessData().getBusinessModel());
 				
-				System.out.println(((User)msg.getJwBusinessData().getParams().get(0)).getName());
+				System.out.println("--------------------"+project);
+				
+			//	System.out.println(((User)msg.getJwBusinessData().getParams().get(0)).getName());
 				
 			}
 		});
