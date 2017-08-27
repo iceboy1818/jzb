@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+          xsi:schemaLocation=
+          "http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/data/mongo
+          http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+    <context:component-scan base-package="jw.zbus.Utils" />
+    
+	
+	
+	 
+	<bean id="zbusPropertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	 <property name="order" value="2" />  
+    <property name="ignoreUnresolvablePlaceholders" value="true" />  
+		<property name="locations">
+			<list>
+				<value>classpath:zbus.properties</value>
+				<value>classpath:mongodb.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+ 
+<!-- mongodb
+
+
+ <mongo:mongo host="${mongo.host}" port="${mongo.port}"/>
+
+<mongo:db-factory id="mongoDbFactory"  mongo-ref="mongo"   dbname="admin"/>
+
+<bean id="jwMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+  <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+</bean>
+ -->
+<!-- mongodb -->
+
+
+
+	<bean id="broker" class="io.zbus.mq.Broker">
+	
+	<constructor-arg name="trackerList" value="${trackerList}"/>
+	</bean>
+	
+	
+	
+	<bean id="rpcInvoker" class="io.zbus.rpc.RpcInvoker">
+            <constructor-arg ref="broker"/>
+            <constructor-arg value="${topic}"/> 
+	</bean>
+
+	<bean id="interfaceExample" factory-bean="rpcInvoker" factory-method="createProxy">
+    <constructor-arg type="java.lang.Class" value="io.zbus.examples.rpc.biz.InterfaceExample"/> 
+	</bean> 
+	
+	
+	<bean id="iBaseExt" factory-bean="rpcInvoker" factory-method="createProxy">
+    <constructor-arg type="java.lang.Class" value="io.zbus.examples.rpc.biz.IBaseExt"/> 
+	</bean>
+	
+    
+    <!-- 暴露接口 -->
+	<bean id="interfaceExampleImpl" class="io.zbus.examples.rpc.biz.InterfaceExampleImpl"></bean>
+	
+	<bean id="baseExtImpl" class="io.zbus.examples.rpc.biz.BaseExtImpl"></bean>
+	
+	
+	<bean id="rpcProcessor" class="io.zbus.rpc.RpcProcessor">
+	<property name="module" >
+	
+	<list>
+                <bean class="io.zbus.examples.rpc.biz.InterfaceExampleImpl">
+                  
+                </bean>
+                <bean class="io.zbus.examples.rpc.biz.BaseExtImpl">
+                  
+                </bean>
+            </list>
+            
+            
+            </property>
+	
+	  
+	</bean>
+
+
+
+
+</beans>
