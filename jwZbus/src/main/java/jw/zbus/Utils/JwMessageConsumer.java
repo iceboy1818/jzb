@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import io.zbus.mq.Broker;
+import io.zbus.mq.ConsumeGroup;
 import io.zbus.mq.Consumer;
 import io.zbus.mq.ConsumerConfig;
 import io.zbus.mq.Message;
@@ -84,8 +85,11 @@ public class JwMessageConsumer {
 				broadTopicValue=broadTopic;
 			}
 			log.info("jwZbus broad consumer init topic="+topicValue +"  broadTopic="+broadTopicValue);
-			config.setTopic(broadTopicValue);     
-			config.setConsumeGroup(broadTopicValue + projectName); //ConsumeGroup name 
+			config.setTopic(broadTopicValue);  
+			ConsumeGroup consumeGroup = new ConsumeGroup();
+			consumeGroup.setGroupName(broadTopicValue + projectName);
+			consumeGroup.setFilter(projectName);
+			config.setConsumeGroup(consumeGroup); //ConsumeGroup name 
 			config.setConnectionCount(1);            //Demo only 1 connection for each consumer
 			config.setMessageHandler(messageHandler);
 			Consumer consumer = new Consumer(config);

@@ -75,7 +75,7 @@ public class JwMessageProducer {
 	}
 	
 	
-	public void broadSend(JwBusinessData jwBusinessData,String topic) {
+	public void broadSend(JwBusinessData jwBusinessData,String topic,String tag) {
 		log.info("jwZbus broadSend jwMessage start");
 		if(!StringUtils.isEmpty(topic)){
 			broadTopicValue=topic;
@@ -88,7 +88,7 @@ public class JwMessageProducer {
 			Message msg = new Message();
 			
 			msg.setTopic(broadTopicValue);     
-			
+			msg.setTag(tag); 
 			msg.setJwBusinessData(jwBusinessData); 
 			log.info("jwZbus broadSend jwMessage init param="+msg.getBodyString() );
 			Message res = p.publish(msg);

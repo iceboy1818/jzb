@@ -26,9 +26,9 @@ public class JwMessageProducerTest {
 		Map<String,Object> params= new HashMap<String,Object>();
 		params.put("user", User);
 		jwBusinessData.setParams(params);
-		for(int i=0;i<10;i++){
-		innjiaMessageProducer.send(jwBusinessData, null);
-		}
+		
+		innjiaMessageProducer.broadSend(jwBusinessData, null, "a.accounmt.b");
+		
 		
 		
 	}

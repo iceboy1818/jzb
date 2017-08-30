@@ -15,7 +15,7 @@ public class JwMessageConsumerTest {
 	
 		ClassPathXmlApplicationContext context1 = new ClassPathXmlApplicationContext("spring-zbus.xml");
 		JwMessageConsumer jwMessageConsumer =(JwMessageConsumer)context1.getBean("jwMessageConsumer"); 
-		jwMessageConsumer.broadStart( null, "zhsh", new MessageHandler() {
+		jwMessageConsumer.broadStart( null, "account", new MessageHandler() {
 			
 			
 			public void handle(Message msg, MqClient client) throws IOException {
