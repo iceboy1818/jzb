@@ -78,7 +78,7 @@ public class JwMessageConsumer {
 	}
 	
 	public void broadStart(String broadTopic,String projectName,MessageHandler messageHandler){
-		log.info("jwZbus broad consumer start");
+		log.info("jwZbus broad consumer start"+broadTopic+"|"+projectName+"|");
 			ConsumerConfig config = new ConsumerConfig(broker);
 			
 			if(!StringUtils.isEmpty(broadTopic)){
@@ -87,7 +87,7 @@ public class JwMessageConsumer {
 			log.info("jwZbus broad consumer init topic="+topicValue +"  broadTopic="+broadTopicValue);
 			config.setTopic(broadTopicValue);  
 			ConsumeGroup consumeGroup = new ConsumeGroup();
-			consumeGroup.setGroupName(broadTopicValue + projectName);
+			consumeGroup.setGroupName(broadTopicValue +"-"+ projectName);
 			consumeGroup.setFilter(projectName);
 			config.setConsumeGroup(consumeGroup); //ConsumeGroup name 
 			config.setConnectionCount(1);            //Demo only 1 connection for each consumer

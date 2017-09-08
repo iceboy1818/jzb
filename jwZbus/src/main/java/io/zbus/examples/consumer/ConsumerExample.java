@@ -22,15 +22,15 @@ public class ConsumerExample {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception { 
 		
-		Broker broker = new Broker("localhost:15555");   
+		Broker broker = new Broker("127.0.0.1:15555");   
 		//Broker broker = new Broker("localhost:15555;localhost:15556"); //Why not test HA?
 		
 		ConsumerConfig config = new ConsumerConfig(broker);
-		config.setTopic("bbbo");              // [R] Topic to consume
+		config.setTopic("innjiaBroad");              // [R] Topic to consume
 		
 		ConsumeGroup group = new ConsumeGroup();
-		final String project="*.account";
-		final String project1="bbbo";
+		final String project="bigFinance";
+		final String project1="innjiaBroad-bigFinance";
 		group.setGroupName(project1);
 		
 		group.setFilter(project); 
@@ -44,10 +44,8 @@ public class ConsumerExample {
 				
 				
 				System.out.println(msg.getBodyString());
-				System.out.println(msg.getJwBusinessData().getBusinessModel());
-				
 				System.out.println("--------------------"+project);
-				
+			//System.out.println(((User)msg.getJwBusinessData().getParams().get("mch")).getName());
 			//	System.out.println(((User)msg.getJwBusinessData().getParams().get(0)).getName());
 				
 			}
@@ -55,5 +53,5 @@ public class ConsumerExample {
 		
 		Consumer consumer = new Consumer(config);
 		consumer.start(); 
-	} 
+	}
 }

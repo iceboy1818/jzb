@@ -8,18 +8,20 @@ import java.util.Map;
  */
 public class JwBusinessData {
 
-	private Map<String, Object> params;
+	private Map<String, Object> datas;
 
 	private String businessModel;
 
 	private JwBusinessDataHeadInfo JwBusinessDataHeadInfo;
 	
-	public Map<String, Object> getParams() {
-		return params;
+	
+
+	public Map<String, Object> getDatas() {
+		return datas;
 	}
 
-	public void setParams(Map<String, Object> params) {
-		this.params = params;
+	public void setDatas(Map<String, Object> datas) {
+		this.datas = datas;
 	}
 
 	public String getBusinessModel() {

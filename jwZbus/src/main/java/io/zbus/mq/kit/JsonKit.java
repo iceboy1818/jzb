@@ -56,7 +56,7 @@ public class JsonKit {
 	
 	public static byte[] toSimpleJSONBytesWithType(Object value, String encoding) {
 		return toJSONBytes(value, encoding,  
-				SerializerFeature.DisableCircularReferenceDetect,SerializerFeature.WriteClassName); 
+				SerializerFeature.DisableCircularReferenceDetect,SerializerFeature.WriteMapNullValue); 
 	} 
 	public static byte[] toJSONBytesWithType(Object value, String encoding) {
 		return toJSONBytes(value, encoding, 

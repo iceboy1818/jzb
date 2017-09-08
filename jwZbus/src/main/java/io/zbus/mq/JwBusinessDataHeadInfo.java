@@ -1,6 +1,14 @@
 package io.zbus.mq;
 
+import java.util.Date;
+
 public class JwBusinessDataHeadInfo {
+	
+	private String message ;
+	
+	private String  code;
+	
+	private Date createTime;
 	
 	private String fromProjectName;
 
@@ -18,11 +26,37 @@ public class JwBusinessDataHeadInfo {
 
 	private boolean needCallBack; // 是否需要回调
 
-	private String RpcId;
+	private String rpcId;
 
 	private String broadId;
 
 	private String callBackSequenceId;
+	
+	
+	
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
 
 	public String getFromProjectName() {
 		return fromProjectName;
@@ -88,12 +122,14 @@ public class JwBusinessDataHeadInfo {
 		this.needCallBack = needCallBack;
 	}
 
+	
+
 	public String getRpcId() {
-		return RpcId;
+		return rpcId;
 	}
 
 	public void setRpcId(String rpcId) {
-		RpcId = rpcId;
+		this.rpcId = rpcId;
 	}
 
 	public String getBroadId() {

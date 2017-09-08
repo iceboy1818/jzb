@@ -21,7 +21,7 @@ public class JwMessageConsumerTest {
 			public void handle(Message msg, MqClient client) throws IOException {
 				System.out.println(msg.getBodyString());
 				System.out.println(msg.getJwBusinessData().getBusinessModel());
-				System.out.println(((User)msg.getJwBusinessData().getParams().get("user")).getName());
+				//System.out.println(((User)msg.getJwBusinessData().getParams().get("user")).getName());
 				
 			}
 		});

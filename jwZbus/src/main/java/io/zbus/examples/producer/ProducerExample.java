@@ -14,7 +14,7 @@ import io.zbus.mq.Producer;
 public class ProducerExample { 
 	
 	public static void main(String[] args) throws Exception { 
-		Broker broker = new Broker("localhost:15555"); 
+		Broker broker = new Broker("localhost:15556"); 
 		//Broker broker = new Broker("localhost:15555;localhost:15556"); //Why not test HA?
 		  
 		Producer p = new Producer(broker);  //Producer is lightweight Java object, no need to destory
@@ -28,15 +28,12 @@ public class ProducerExample {
 		User.setName("555");
 		Map<String,Object> params= new HashMap<String,Object>();
 		params.put("user", User);
-		jwBusinessData.setParams(params);
+		jwBusinessData.setDatas(params);
 		msg.setJwBusinessData(jwBusinessData);
 		  //a binary blob, application may define it's own format
 		msg.setTag("a.accountb"); 
 		Message res = p.publish(msg);//Synchroneous, for async:  p.pubglishAsync(msg, callback);
-		
 		System.out.println(res);    
-		
-		
 		broker.close(); //Broker is a heavey Java Object, it should be shared, and has to be destroyed
 	}
 }

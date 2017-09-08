@@ -22,12 +22,12 @@ public class JwMessageProducerTest {
 		JwBusinessData jwBusinessData=new JwBusinessData();
 		jwBusinessData.setBusinessModel("jwBusinessType");
 		User User= new User();
-		User.setName("po");
+		User.setName("ppppppppo");
 		Map<String,Object> params= new HashMap<String,Object>();
 		params.put("user", User);
-		jwBusinessData.setParams(params);
+		jwBusinessData.setDatas(params);
 		
-		innjiaMessageProducer.broadSend(jwBusinessData, null, "a.accounmt.b");
+		innjiaMessageProducer.broadSend(jwBusinessData, null, "a.account.b");
 		
 		
 		
