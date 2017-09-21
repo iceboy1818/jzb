@@ -6,7 +6,7 @@ public class JwBusinessDataHeadInfo {
 	
 	private String message ;
 	
-	private String  code;
+	private String code;
 	
 	private Date createTime;
 	
@@ -24,16 +24,39 @@ public class JwBusinessDataHeadInfo {
 
 	private boolean isRpc; // 是否RPC
 
-	private boolean needCallBack; // 是否需要回调
-
 	private String rpcId;
 
-	private String broadId;
+	private String email;
+	
+	private String emailContent;
+	 
+	private Boolean emailSendFlag;
+	
+	
+	public Boolean getEmailSendFlag() {
+		return emailSendFlag;
+	}
 
-	private String callBackSequenceId;
-	
-	
-	
+	public void setEmailSendFlag(Boolean emailSendFlag) {
+		this.emailSendFlag = emailSendFlag;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmailContent() {
+		return emailContent;
+	}
+
+	public void setEmailContent(String emailContent) {
+		this.emailContent = emailContent;
+	}
+
 	public String getMessage() {
 		return message;
 	}
@@ -114,16 +137,6 @@ public class JwBusinessDataHeadInfo {
 		this.isRpc = isRpc;
 	}
 
-	public boolean isNeedCallBack() {
-		return needCallBack;
-	}
-
-	public void setNeedCallBack(boolean needCallBack) {
-		this.needCallBack = needCallBack;
-	}
-
-	
-
 	public String getRpcId() {
 		return rpcId;
 	}
@@ -132,21 +145,6 @@ public class JwBusinessDataHeadInfo {
 		this.rpcId = rpcId;
 	}
 
-	public String getBroadId() {
-		return broadId;
-	}
-
-	public void setBroadId(String broadId) {
-		this.broadId = broadId;
-	}
-
-	public String getCallBackSequenceId() {
-		return callBackSequenceId;
-	}
-
-	public void setCallBackSequenceId(String callBackSequenceId) {
-		this.callBackSequenceId = callBackSequenceId;
-	}
 	
 	
 }
