@@ -3,6 +3,7 @@ package jw.rabbitmq.Utils;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.locks.Lock;
@@ -26,8 +27,10 @@ public class MqCustomUtils {
 	private static ConnectionFactory connectionFactory;
 
 	public static Connection connection;
-	
+
 	public static HessianCodecFactory hessianCodecFactory;
+
+	private static Channel cc;
 
 	private static Connection getMqConnection() throws Exception {
 
@@ -36,7 +39,7 @@ public class MqCustomUtils {
 			if (connection == null) {
 				connectionFactory = new ConnectionFactory();
 				initConnectionFactory(connectionFactory);
-				hessianCodecFactory=new HessianCodecFactory();
+				hessianCodecFactory = new HessianCodecFactory();
 				connection = connectionFactory.newConnection();
 			}
 			lock.unlock();
@@ -45,14 +48,13 @@ public class MqCustomUtils {
 	}
 
 	private static void initConnectionFactory(ConnectionFactory connectionFactory) {
-		ResourceBundle conf = ResourceBundle.getBundle("mqServerInfo");
-		String userName = conf.getString("userName");
-		String password = conf.getString("password");
-		String virtualHost = conf.getString("virtualHost");
-		String host = conf.getString("host");
-		String port = conf.getString("port");
+		String userName = "guest";
+		String password = "guest";
+		String virtualHost = "/";
+		String host = "192.168.99.100";
+		String port = "5672";
 
-//		connectionFactory = new ConnectionFactory();
+		// connectionFactory = new ConnectionFactory();
 		connectionFactory.setUsername(userName);
 		connectionFactory.setPassword(password);
 		connectionFactory.setVirtualHost(virtualHost);
@@ -61,8 +63,9 @@ public class MqCustomUtils {
 	}
 
 	public static Channel getMqChannel() throws Exception {
-		return getMqConnection().createChannel();
-	}
+		if(cc!=null)return cc;
+
+		cc=getMqConnection().createChannel();return cc;}
 
 	public static void closeConnecton(Connection connection) throws Exception {
 		connection.close();
@@ -98,8 +101,6 @@ public class MqCustomUtils {
 		channel.close();
 		return true;
 	}
-	
-	
 
 	public static Boolean confirmModeSend(ConfirmListener confirmListener, Integer timeout, Object message,
 			String exchangeName, String queue) throws Exception {
@@ -116,7 +117,7 @@ public class MqCustomUtils {
 		channel.queueBind(queue, exchangeName, exchangeName + "RoutKey");
 		// BasicProperties basicProperties= new BasicProperties();
 		// basicProperties.builder().deliveryMode(DeliveryMode.PERSISTENT);
-		byte[] messageBodyBytes=hessianCodecFactory.serialize(message);
+		byte[] messageBodyBytes = hessianCodecFactory.serialize(message);
 		Date d = new Date();
 		System.out.println(d);
 
@@ -131,18 +132,31 @@ public class MqCustomUtils {
 		channel.close();
 		return true;
 	}
+
 	public static Boolean transactionalModeSend(Integer timeout, String message, String exchangeName, String queue)
 			throws Exception {
 		Channel channel = getMqChannel();
 
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("x-message-ttl", 60000);
-		String deathBox = "deathBox";
-		map.put("x-dead-letter-exchange", "deathBox");
-		map.put("x-dead-letter-routing-key", deathBox + "RoutKey");
+		
 		channel.exchangeDeclare(exchangeName, "direct", true);
-		channel.queueDeclare(queue, true, false, false, null);
+		channel.exchangeDeclare(exchangeName+".retry", "direct", true);
+		channel.exchangeDeclare(exchangeName+".failed", "direct", true);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("x-dead-letter-exchange", exchangeName+".retry");
+		map.put("x-dead-letter-routing-key", exchangeName+".retry"+"RoutKey");
+		channel.queueDeclare(queue, true, false, false, map);
+			Map arguments = new HashMap();
+			arguments.put("x-dead-letter-exchange", exchangeName);
+			arguments.put("x-dead-letter-routing-key", exchangeName+"RoutKey");
+			arguments.put("x-message-ttl", 30 * 1000);
+			channel.queueDeclare(queue + "@retry", true, false, false, arguments);
+		
+		channel.queueDeclare(queue + "@failed", true, false, false, null);
+		
 		channel.queueBind(queue, exchangeName, exchangeName + "RoutKey");
+		channel.queueBind(queue + "@failed", exchangeName+".failed", exchangeName+".failed"+"RoutKey");
+		channel.queueBind(queue + "@retry", exchangeName+".retry", exchangeName+".retry"+"RoutKey");
 		// BasicProperties basicProperties= new BasicProperties();
 		// basicProperties.builder().deliveryMode(DeliveryMode.PERSISTENT);
 		byte[] messageBodyBytes = message.getBytes();
@@ -156,35 +170,78 @@ public class MqCustomUtils {
 
 		Date d2 = new Date();
 		System.out.println(d2);
-		boolean isok = channel.waitForConfirms();
+		// boolean isok = channel.waitForConfirms();
 		System.out.println("sucess");
-		System.out.println("sucess " + isok);
+		// System.out.println("sucess " + isok);
 		channel.close();
 		return true;
 	}
 
-	public static Boolean consume(String queueName,final MqCustomConsumer mqCustomConsumer) throws Exception {
+	public static Boolean consume(String queueName, final MqCustomConsumer mqCustomConsumer) throws Exception {
 		final Channel channel = getMqChannel();
+		channel.basicQos(3, true);
+
+		channel.basicConsume(queueName, false, new DefaultConsumer(channel) {
+		
+
+			@Override
+			public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
+					byte[] body) throws IOException {
+				// Object message=hessianCodecFactory.deSerialize(body);
+				// String routingKey = envelope.getRoutingKey();
+				// String contentType = properties.getContentType();
+				mqCustomConsumer.processConsume(new String(body));
+
+				long deliveryTag = envelope.getDeliveryTag();
+				System.out.println(new String(body));
+				// channel.basicAck(deliveryTag, false);
+				System.out.println("consumer sucess one task");
+				
+				Map headers = properties.getHeaders();
+				if (headers != null) {
+					if (headers.containsKey("x-death")) {
+						List<Map> deaths = (List<Map>) headers.get("x-death");
+						if (deaths.size() > 0) {
+							Map death = deaths.get(0);
+						Long	retryCount = (Long) death.get("count");
+						System.out.println("---------------------------------"+retryCount);
+						}
+					}
+				}
+					channel.basicReject(deliveryTag, false);
+					
+					
+			}
+		});
+		// System.out.println("consumer receive one task");
+
+		return true;
+	}
+
+	public static Boolean consume1(String queueName, final MqCustomConsumer mqCustomConsumer) throws Exception {
+		final Channel channel = getMqChannel();
+		channel.basicRecover(true);
 		channel.basicConsume(queueName, false, new DefaultConsumer(channel) {
 			@Override
 			public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties,
 					byte[] body) throws IOException {
-				Object message=hessianCodecFactory.deSerialize(body);
+
+				// Object message=hessianCodecFactory.deSerialize(body);
 				// String routingKey = envelope.getRoutingKey();
 				// String contentType = properties.getContentType();
-				mqCustomConsumer.processConsume(message);
-				
+
+				mqCustomConsumer.processConsume(new String(body));
+
 				long deliveryTag = envelope.getDeliveryTag();
 				System.out.println(new String(body));
 				channel.basicAck(deliveryTag, false);
+
 				System.out.println("consumer sucess one task");
 			}
 		});
-		System.out.println("consumer receive one task");
+		// System.out.println("consumer receive one task");
 
-		
 		return true;
 	}
-	
-	
+
 }
