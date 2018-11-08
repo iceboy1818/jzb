@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:38 CST 2018
+wiremock-standalone-2.18.0-sources.jar>spring-milestones=
+wiremock-standalone-2.18.0.jar>spring-milestones=
+wiremock-standalone-2.18.0.pom>spring-milestones=

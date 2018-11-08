@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:08 CST 2018
+automaton-1.11-8.jar>spring-milestones=
+automaton-1.11-8.pom>spring-milestones=
+automaton-1.11-8-sources.jar>spring-milestones=

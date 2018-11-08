@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:18 CST 2018
+reactor-netty-0.7.9.RELEASE-sources.jar>spring-milestones=
+reactor-netty-0.7.9.RELEASE.jar>spring-milestones=
+reactor-netty-0.7.9.RELEASE.pom>spring-milestones=

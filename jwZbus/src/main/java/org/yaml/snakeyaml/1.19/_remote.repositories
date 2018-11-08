@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:52 CST 2018
+snakeyaml-1.19-sources.jar>spring-milestones=
+snakeyaml-1.19.jar>spring-milestones=
+snakeyaml-1.19.pom>spring-milestones=

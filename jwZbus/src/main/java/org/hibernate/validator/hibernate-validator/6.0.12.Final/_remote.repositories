@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:19 CST 2018
+hibernate-validator-6.0.12.Final-sources.jar>spring-milestones=
+hibernate-validator-6.0.12.Final.jar>spring-milestones=
+hibernate-validator-6.0.12.Final.pom>spring-milestones=

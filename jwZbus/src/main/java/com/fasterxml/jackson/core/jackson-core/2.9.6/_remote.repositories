@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:42 CST 2018
+jackson-core-2.9.6.jar>spring-milestones=
+jackson-core-2.9.6.pom>spring-milestones=
+jackson-core-2.9.6-sources.jar>spring-milestones=

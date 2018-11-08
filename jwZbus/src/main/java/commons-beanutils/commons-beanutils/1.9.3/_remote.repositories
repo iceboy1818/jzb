@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:02 CST 2018
+commons-beanutils-1.9.3.jar>spring-milestones=
+commons-beanutils-1.9.3-sources.jar>spring-milestones=
+commons-beanutils-1.9.3.pom>spring-milestones=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:01 CST 2018
+rhino-1.7R4.jar>spring-milestones=
+rhino-1.7R4-sources.jar>spring-milestones=
+rhino-1.7R4.pom>spring-milestones=

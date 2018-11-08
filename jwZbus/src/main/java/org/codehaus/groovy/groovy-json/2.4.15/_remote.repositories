@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:57 CST 2018
+groovy-json-2.4.15.jar>spring-milestones=
+groovy-json-2.4.15.pom>spring-milestones=
+groovy-json-2.4.15-sources.jar>spring-milestones=

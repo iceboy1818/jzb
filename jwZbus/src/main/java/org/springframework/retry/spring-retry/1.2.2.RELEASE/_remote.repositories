@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:35 CST 2018
+spring-retry-1.2.2.RELEASE.jar>spring-milestones=
+spring-retry-1.2.2.RELEASE-sources.jar>spring-milestones=
+spring-retry-1.2.2.RELEASE.pom>spring-milestones=

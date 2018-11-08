@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:11 CST 2018
+org.eclipse.jgit-4.11.0.201803080745-r-sources.jar>spring-milestones=
+org.eclipse.jgit-4.11.0.201803080745-r.jar>spring-milestones=
+org.eclipse.jgit-4.11.0.201803080745-r.pom>spring-milestones=

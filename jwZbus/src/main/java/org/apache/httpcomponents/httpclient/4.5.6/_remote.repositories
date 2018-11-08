@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:39 CST 2018
+httpclient-4.5.6-sources.jar>spring-milestones=
+httpclient-4.5.6.jar>spring-milestones=
+httpclient-4.5.6.pom>spring-milestones=

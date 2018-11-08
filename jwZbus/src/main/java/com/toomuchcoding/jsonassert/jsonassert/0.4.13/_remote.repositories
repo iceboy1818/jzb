@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:55 CST 2018
+jsonassert-0.4.13.pom>spring-milestones=
+jsonassert-0.4.13-sources.jar>spring-milestones=
+jsonassert-0.4.13.jar>spring-milestones=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:24 CST 2018
+tomcat-embed-el-8.5.34.jar>spring-milestones=
+tomcat-embed-el-8.5.34-sources.jar>spring-milestones=
+tomcat-embed-el-8.5.34.pom>spring-milestones=

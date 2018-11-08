@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.tomakehurst</groupId>
+  <artifactId>wiremock-standalone</artifactId>
+  <version>2.18.0</version>
+  <name>WireMock</name>
+  <description>A web service test double for all occasions</description>
+  <url>http://wiremock.org</url>
+  <scm>
+    <connection>https://tomakehurst@github.com/tomakehurst/wiremock.git</connection>
+    <developerConnection>https://tomakehurst@github.com/tomakehurst/wiremock.git</developerConnection>
+    <url>https://tomakehurst@github.com/tomakehurst/wiremock.git</url>
+  </scm>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/license/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>tomakehurst</id>
+      <name>Tom Akehurst</name>
+    </developer>
+  </developers>
+</project>

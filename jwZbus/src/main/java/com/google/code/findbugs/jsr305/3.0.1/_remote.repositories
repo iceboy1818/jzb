@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:33 CST 2018
+jsr305-3.0.1.pom>spring-milestones=
+jsr305-3.0.1-sources.jar>spring-milestones=
+jsr305-3.0.1.jar>spring-milestones=

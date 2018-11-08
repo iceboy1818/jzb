@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:02:35 CST 2018
+commons-configuration-1.8.jar>spring-milestones=
+commons-configuration-1.8-sources.jar>spring-milestones=
+commons-configuration-1.8.pom>spring-milestones=

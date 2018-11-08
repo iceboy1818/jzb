@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:58 CST 2018
+byte-buddy-1.7.11.pom>spring-milestones=
+byte-buddy-1.7.11-sources.jar>spring-milestones=
+byte-buddy-1.7.11.jar>spring-milestones=

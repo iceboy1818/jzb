@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Nov 08 17:03:19 CST 2018
+jna-4.5.2.jar>spring-milestones=
+jna-4.5.2-sources.jar>spring-milestones=
+jna-4.5.2.pom>spring-milestones=
