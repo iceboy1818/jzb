@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:50:18 CST 2018
+spring-webflux-5.0.4.RELEASE-sources.jar>spring-milestone=
+spring-webflux-5.0.4.RELEASE.jar>spring-milestone=
+spring-webflux-5.0.4.RELEASE.pom>spring-milestone=

@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:02:26 CST 2018
+#Fri Nov 09 14:40:10 CST 2018
 spring-cloud-netflix-core-2.0.1.RELEASE.jar>spring-milestones=
 spring-cloud-netflix-core-2.0.1.RELEASE-sources.jar>spring-milestones=
+spring-cloud-netflix-core-2.0.1.RELEASE.jar>spring-milestone=
 spring-cloud-netflix-core-2.0.1.RELEASE.pom>spring-milestones=
+spring-cloud-netflix-core-2.0.1.RELEASE.pom>spring-milestone=

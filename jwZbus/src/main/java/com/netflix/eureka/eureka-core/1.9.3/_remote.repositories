@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:57 CST 2018
+eureka-core-1.9.3.jar>spring-milestones=
+eureka-core-1.9.3.pom>central=
+eureka-core-1.9.3-sources.jar>spring-milestones=
+eureka-core-1.9.3.pom>spring-milestones=
+eureka-core-1.9.3.jar>central=

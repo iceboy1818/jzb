@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:49:27 CST 2018
+brave-instrumentation-spring-rabbit-5.1.4-sources.jar>central=
+brave-instrumentation-spring-rabbit-5.1.4.jar>central=
+brave-instrumentation-spring-rabbit-5.1.4.pom>central=

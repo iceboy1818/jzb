@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:42:00 CST 2018
+rxnetty-0.4.9.jar>central=
+rxnetty-0.4.9-sources.jar>spring-milestones=
+rxnetty-0.4.9.pom>central=
+rxnetty-0.4.9.jar>spring-milestones=
+rxnetty-0.4.9.pom>spring-milestones=

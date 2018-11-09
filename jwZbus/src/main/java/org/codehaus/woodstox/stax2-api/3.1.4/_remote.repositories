@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:58 CST 2018
+stax2-api-3.1.4-sources.jar>spring-milestones=
+stax2-api-3.1.4.jar>central=
+stax2-api-3.1.4.jar>spring-milestones=
+stax2-api-3.1.4.pom>spring-milestones=
+stax2-api-3.1.4.pom>central=

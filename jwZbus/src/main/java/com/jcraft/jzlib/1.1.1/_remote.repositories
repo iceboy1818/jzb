@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:03:13 CST 2018
+#Fri Nov 09 14:42:23 CST 2018
 jzlib-1.1.1.jar>spring-milestones=
 jzlib-1.1.1-sources.jar>spring-milestones=
 jzlib-1.1.1.pom>spring-milestones=
+jzlib-1.1.1.jar>central=
+jzlib-1.1.1.pom>central=

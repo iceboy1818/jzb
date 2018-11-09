@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:54 CST 2018
+commons-jxpath-1.3.jar>spring-milestones=
+commons-jxpath-1.3.pom>spring-milestones=
+commons-jxpath-1.3-sources.jar>spring-milestones=
+commons-jxpath-1.3.jar>central=
+commons-jxpath-1.3.pom>central=

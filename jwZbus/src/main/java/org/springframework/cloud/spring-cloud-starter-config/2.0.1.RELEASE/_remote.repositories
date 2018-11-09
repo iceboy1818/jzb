@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:48:44 CST 2018
+spring-cloud-starter-config-2.0.1.RELEASE-sources.jar>spring-milestone=
+spring-cloud-starter-config-2.0.1.RELEASE.jar>spring-milestone=
+spring-cloud-starter-config-2.0.1.RELEASE.pom>spring-milestone=

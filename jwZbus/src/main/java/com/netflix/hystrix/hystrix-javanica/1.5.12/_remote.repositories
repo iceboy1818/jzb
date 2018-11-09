@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:02:45 CST 2018
+#Fri Nov 09 14:46:48 CST 2018
 hystrix-javanica-1.5.12-sources.jar>spring-milestones=
 hystrix-javanica-1.5.12.jar>spring-milestones=
+hystrix-javanica-1.5.12.jar>central=
 hystrix-javanica-1.5.12.pom>spring-milestones=
+hystrix-javanica-1.5.12.pom>central=

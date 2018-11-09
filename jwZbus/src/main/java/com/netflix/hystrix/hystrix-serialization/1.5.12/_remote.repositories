@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:02:40 CST 2018
+#Fri Nov 09 14:46:47 CST 2018
 hystrix-serialization-1.5.12.pom>spring-milestones=
+hystrix-serialization-1.5.12.jar>central=
 hystrix-serialization-1.5.12-sources.jar>spring-milestones=
+hystrix-serialization-1.5.12.pom>central=
 hystrix-serialization-1.5.12.jar>spring-milestones=

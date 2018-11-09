@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:58 CST 2018
+xstream-1.4.10.jar>central=
+xstream-1.4.10-sources.jar>spring-milestones=
+xstream-1.4.10.jar>spring-milestones=
+xstream-1.4.10.pom>central=
+xstream-1.4.10.pom>spring-milestones=

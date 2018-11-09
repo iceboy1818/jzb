@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:56 CST 2018
+dexx-collections-0.2.jar>central=
+dexx-collections-0.2-sources.jar>spring-milestones=
+dexx-collections-0.2.pom>central=
+dexx-collections-0.2.jar>spring-milestones=
+dexx-collections-0.2.pom>spring-milestones=

@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:29:49 CST 2018
+gson-2.8.5-sources.jar>spring-milestones=
+gson-2.8.5.jar>spring-milestones=
+gson-2.8.5.pom>spring-milestones=

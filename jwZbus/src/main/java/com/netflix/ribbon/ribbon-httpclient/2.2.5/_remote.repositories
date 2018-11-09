@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:42:01 CST 2018
+ribbon-httpclient-2.2.5-sources.jar>spring-milestones=
+ribbon-httpclient-2.2.5.pom>central=
+ribbon-httpclient-2.2.5.jar>spring-milestones=
+ribbon-httpclient-2.2.5.pom>spring-milestones=
+ribbon-httpclient-2.2.5.jar>central=

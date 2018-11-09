@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 09:39:49 CST 2018
+lettuce-core-5.0.5.RELEASE-sources.jar>spring-milestones=
+lettuce-core-5.0.5.RELEASE.jar>spring-milestones=
+lettuce-core-5.0.5.RELEASE.pom>spring-milestones=

@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:54 CST 2018
+joda-time-2.9.9.jar>central=
+joda-time-2.9.9.jar>spring-milestones=
+joda-time-2.9.9.pom>central=
+joda-time-2.9.9.pom>spring-milestones=
+joda-time-2.9.9-sources.jar>spring-milestones=

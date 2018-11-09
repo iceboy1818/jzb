@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:55 CST 2018
+commons-math-2.2-sources.jar>spring-milestones=
+commons-math-2.2.jar>central=
+commons-math-2.2.pom>spring-milestones=
+commons-math-2.2.pom>central=
+commons-math-2.2.jar>spring-milestones=

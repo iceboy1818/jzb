@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:03:12 CST 2018
+#Fri Nov 09 14:42:23 CST 2018
+jsch-0.1.54.jar>central=
 jsch-0.1.54-sources.jar>spring-milestones=
+jsch-0.1.54.pom>central=
 jsch-0.1.54.jar>spring-milestones=
 jsch-0.1.54.pom>spring-milestones=

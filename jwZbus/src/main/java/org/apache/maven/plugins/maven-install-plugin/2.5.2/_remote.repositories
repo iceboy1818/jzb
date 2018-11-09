@@ -1,3 +1,4 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 16:18:27 CST 2018
+#Fri Nov 09 12:14:35 CST 2018
 maven-install-plugin-2.5.2.jar>central=
+maven-install-plugin-2.5.2.pom>central=

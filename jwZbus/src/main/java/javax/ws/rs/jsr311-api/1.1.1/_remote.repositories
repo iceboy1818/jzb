@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Nov 09 14:41:55 CST 2018
+jsr311-api-1.1.1-sources.jar>spring-milestones=
+jsr311-api-1.1.1.jar>spring-milestones=
+jsr311-api-1.1.1.pom>spring-milestones=
+jsr311-api-1.1.1.jar>central=
+jsr311-api-1.1.1.pom>central=

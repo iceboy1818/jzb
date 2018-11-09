@@ -1,5 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Thu Nov 08 17:02:48 CST 2018
+#Fri Nov 09 14:41:53 CST 2018
+aspectjweaver-1.8.13.jar>central=
+aspectjweaver-1.8.13.pom>central=
 aspectjweaver-1.8.13.jar>spring-milestones=
 aspectjweaver-1.8.13.pom>spring-milestones=
 aspectjweaver-1.8.13-sources.jar>spring-milestones=
